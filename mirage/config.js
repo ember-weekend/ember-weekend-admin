@@ -2,6 +2,8 @@ import config from '../config/environment';
 export default function() {
   this.urlPrefix = config.apiUrl;
 
+  this.get('/episodes');
+
   this.post('/sessions', function() {
     return {
       included: [{

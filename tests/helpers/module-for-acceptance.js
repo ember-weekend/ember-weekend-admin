@@ -2,6 +2,7 @@ import { module } from 'qunit';
 import Ember from 'ember';
 import startApp from '../helpers/start-app';
 import destroyApp from '../helpers/destroy-app';
+import { logout } from '../helpers/auth';
 
 const { RSVP: { Promise } } = Ember;
 
@@ -19,6 +20,7 @@ export default function(name, options = {}) {
     },
 
     afterEach() {
+      logout();
       let afterEach = options.afterEach && options.afterEach.apply(this, arguments);
       return Promise.resolve(afterEach).then(() => destroyApp(this.application));
     }

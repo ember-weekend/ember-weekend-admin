@@ -10,6 +10,8 @@ function lookupProvider(container, providerName){
   return container.lookup('torii-provider:'+providerName);
 }
 
+export { sessionKey, userKey };
+
 export default Ember.Object.extend({
   store: Ember.inject.service('store'),
   fetch() {
