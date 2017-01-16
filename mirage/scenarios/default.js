@@ -1,11 +1,11 @@
-export default function(/* server */) {
+import { faker } from 'ember-cli-mirage';
 
-  /*
-    Seed your development database using your factories.
-    This data will not be loaded in your tests.
-
-    Make sure to define a factory for each model you want to create.
-  */
-
-  // server.createList('post', 10);
+export default function(server) {
+  for (let i = 0; i < 5; i++) {
+    server.create('episode', {
+      number: String(i + 1),
+      title: faker.lorem.words(3),
+      description: faker.lorem.sentences(3),
+    });
+  }
 }
