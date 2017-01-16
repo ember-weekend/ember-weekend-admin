@@ -1773,6 +1773,12 @@ ember-rapid-forms@1.0.0-beta11:
     ember-cli-babel "^5.1.6"
     ember-cli-htmlbars "1.0.8"
 
+ember-reactive-helpers@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/ember-reactive-helpers/-/ember-reactive-helpers-0.4.0.tgz#bd6b48f556414e313c16ad26e99d5eaeefd15959"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+
 ember-resolver@^2.0.3:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ember-resolver/-/ember-resolver-2.1.1.tgz#5e4c1fffe9f5f48fc2194ad7592274ed0cd74f72"
