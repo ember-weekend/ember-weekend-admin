@@ -11,6 +11,10 @@ Router.map(function() {
   this.authenticatedRoute('home', { path: '/' });
   this.authenticatedRoute('episodes', function() {
   });
+
+  this.route('episodes', function() {
+    this.route('show', { path: ':episodeId' });
+  });
 });
 
 export default Router;

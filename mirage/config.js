@@ -3,6 +3,7 @@ export default function() {
   this.urlPrefix = config.apiUrl;
 
   this.get('/episodes');
+  this.get('/episodes/:id');
 
   this.post('/sessions', function() {
     return {
