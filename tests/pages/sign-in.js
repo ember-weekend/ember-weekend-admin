@@ -1,9 +1,18 @@
 import PageObject from '../page-object';
 
-let {
-  visitable
+const {
+  visitable,
+  isHidden,
+  text,
+  clickable
 } = PageObject;
 
+const url = '/sign-in';
+
 export default PageObject.create({
-  visit: visitable('/sign-in')
+  url,
+  visit: visitable(url),
+  noErrors: isHidden('.error'),
+  error: text('.error'),
+  signInWithGithub: clickable('#github')
 });
