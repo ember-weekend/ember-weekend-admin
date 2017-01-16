@@ -1406,6 +1406,15 @@ ember-cli-htmlbars-inline-precompile@^0.3.3:
     ember-cli-htmlbars "^1.0.0"
     hash-for-dep "^1.0.2"
 
+ember-cli-htmlbars@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-1.0.8.tgz#99710a83b31584100ccd7f2175beca4ec0e93210"
+  dependencies:
+    broccoli-persistent-filter "^1.0.3"
+    ember-cli-version-checker "^1.0.2"
+    json-stable-stringify "^1.0.0"
+    strip-bom "^2.0.0"
+
 ember-cli-htmlbars@^1.0.0, ember-cli-htmlbars@^1.0.1, ember-cli-htmlbars@^1.0.10, ember-cli-htmlbars@^1.0.3:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-1.1.1.tgz#8776cf59796dac8f32e8625fc6d1ea45ffa55de1"
@@ -1689,6 +1698,13 @@ ember-qunit@^2.0.0-beta.1:
   resolved "https://registry.yarnpkg.com/ember-qunit/-/ember-qunit-2.0.0-beta.1.tgz#f6b815e51e253bfa662e3915da4b093681d8c5e2"
   dependencies:
     ember-test-helpers "^0.6.0-beta.1"
+
+ember-rapid-forms@1.0.0-beta11:
+  version "1.0.0-beta11"
+  resolved "https://registry.yarnpkg.com/ember-rapid-forms/-/ember-rapid-forms-1.0.0-beta11.tgz#0c2f0c514d785c2b6886117bc1fd9b0b28773437"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+    ember-cli-htmlbars "1.0.8"
 
 ember-resolver@^2.0.3:
   version "2.1.1"
