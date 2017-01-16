@@ -39,7 +39,8 @@
     "ember-rapid-forms": "1.0.0-beta11",
     "ember-resolver": "^2.0.3",
     "ember-truth-helpers": "1.3.0",
-    "loader.js": "^4.0.10"
+    "loader.js": "^4.0.10",
+    "torii": "0.8.1"
   },
   "engines": {
     "node": ">= 0.12.0"
