@@ -1617,7 +1617,7 @@ ember-cli-valid-component-name@^1.0.0:
   dependencies:
     silent-error "^1.0.0"
 
-ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.4, ember-cli-version-checker@^1.1.6, ember-cli-version-checker@^1.1.7:
+ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.4, ember-cli-version-checker@^1.1.6, ember-cli-version-checker@^1.1.7, ember-cli-version-checker@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-1.2.0.tgz#caa286b77d1b485df5d2f62c67a6f19aa8b582c4"
   dependencies:
@@ -1742,6 +1742,13 @@ ember-export-application-global@^1.0.5:
   dependencies:
     ember-cli-babel "^5.1.10"
 
+ember-getowner-polyfill@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ember-getowner-polyfill/-/ember-getowner-polyfill-1.1.1.tgz#6bb6603827dd2f8f33be2434570a86cc9e5273ff"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+    ember-cli-version-checker "^1.2.0"
+
 ember-inflector@^1.9.2, ember-inflector@^1.9.4:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-1.11.0.tgz#99baae18e2bee53cfa97d8db1d739280289a174f"
@@ -1785,6 +1792,13 @@ ember-resolver@^2.0.3:
   dependencies:
     ember-cli-babel "^5.1.6"
     ember-cli-version-checker "^1.1.6"
+
+ember-route-action-helper@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ember-route-action-helper/-/ember-route-action-helper-2.0.1.tgz#a317c390d362ece95b854f9ddc448303e65bd811"
+  dependencies:
+    ember-cli-babel "^5.1.7"
+    ember-getowner-polyfill "^1.1.1"
 
 ember-router-generator@^1.0.0:
   version "1.2.2"
