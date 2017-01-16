@@ -1368,6 +1368,12 @@ ember-bootstrap@1.0.0-alpha.2:
     ember-runtime-enumerable-includes-polyfill "^1.0.1"
     ember-wormhole "^0.4.1"
 
+ember-changeset@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.2.0.tgz#db06a8f3321f280dc6f156fa837a947bdd3c562a"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+
 ember-cli-app-version@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-2.0.1.tgz#64cbe581a9abaf98afd60e9cf60fdec460766c9b"
