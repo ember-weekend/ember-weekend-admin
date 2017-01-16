@@ -46,3 +46,42 @@ test('user signs in with github', function(assert) {
     assert.equal(currentURL(), '/');
   });
 });
+
+const sessionKey = 'ember-weekend-session';
+const userKey = 'ember-weekend-user';
+
+test('already signed in user is redirected to home page', function(assert) {
+  localStorage.setItem(sessionKey, JSON.stringify({
+    data: {
+      type: 'sessions',
+      id: 1,
+      attributes: {
+        token: '12345'
+      },
+      relationships: {
+        user: {
+          data: {
+            type: 'users',
+            id: 1
+          }
+        }
+      }
+    }
+  }));
+  localStorage.setItem(userKey, JSON.stringify({
+    data: {
+      type: 'users',
+      id: 1,
+      attributes: {
+        name: 'Rick Sanchez',
+        username: 'tinyrick'
+      }
+    }
+  }));
+  assert.expect(1);
+  signIn.visit();
+
+  andThen(function() {
+    assert.equal(currentURL(), '/');
+  });
+});

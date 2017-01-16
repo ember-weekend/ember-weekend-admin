@@ -10,6 +10,9 @@ export default function(name, options = {}) {
     beforeEach() {
       this.application = startApp();
 
+      localStorage.removeItem('ember-weekend-session'); // jshint ignore:line
+      localStorage.removeItem('ember-weekend-user'); // jshint ignore:line
+
       if (options.beforeEach) {
         return options.beforeEach.apply(this, arguments);
       }
