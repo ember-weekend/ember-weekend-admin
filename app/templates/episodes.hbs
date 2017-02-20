@@ -1,11 +1,11 @@
-<div class="col-md-4 col-xs-4" test-id="episodes">
+<div class="col-md-4 col-xs-4" data-test-episodes>
   <div class="list-group">
     {{#each model as |episode|}}
       {{#link-to 'episodes.show' episode.id class='list-group-item episode'}}
-        <h4 test-id="episode-title" class="list-group-item-heading">
+        <h4 class="list-group-item-heading" data-test-episode-title>
           {{episode.number}} - {{episode.title}}
         </h4>
-        <p test-id="episode-description" class="list-group-item-text">
+        <p class="list-group-item-text" data-test-episode-description>
           {{episode.description}}
         </p>
       {{/link-to}}

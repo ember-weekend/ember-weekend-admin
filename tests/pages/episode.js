@@ -7,8 +7,8 @@ import {
 export default create({
   visit: visitable('/episodes/:episodeId'),
   episode: {
-    scope: '[test-id=episode]',
-    title: text('[test-id=episode-title]'),
-    description: text('[test-id=episode-description]'),
+    scope: '[data-test-episode]',
+    title: text('[data-test-episode-title]'),
+    description: text('[data-test-episode-description]'),
   }
 });

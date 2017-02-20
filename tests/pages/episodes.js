@@ -11,10 +11,10 @@ export default create({
   url,
   visit: visitable(url),
   episodes: collection({
-    itemScope: '[test-id=episodes] .episode',
+    itemScope: '[data-test-episodes] .episode',
     item: {
-      title: text('[test-id=episode-title]'),
-      description: text('[test-id=episode-description]'),
+      title: text('[data-test-episode-title]'),
+      description: text('[data-test-episode-description]'),
     }
   }),
 });
