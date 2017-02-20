@@ -1,9 +1,13 @@
 import config from '../config/environment';
+import { buildAuth } from './auth';
+
 export default function() {
   this.urlPrefix = config.apiUrl;
+  const auth = buildAuth(this);
 
-  this.get('/episodes');
-  this.get('/episodes/:id');
+  auth.get('/episodes');
+  auth.get('/episodes/:id');
+  auth.patch('/episodes/:id');
 
   this.post('/sessions', function() {
     return {

@@ -10,10 +10,8 @@ Router.map(function() {
   this.route('sign-in');
   this.authenticatedRoute('home', { path: '/' });
   this.authenticatedRoute('episodes', function() {
-  });
-
-  this.route('episodes', function() {
     this.route('show', { path: ':episodeId' });
+    this.route('edit', { path: ':episodeId/edit' });
   });
 });
 
