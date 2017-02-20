@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { test } from 'qunit';
 import moduleForAcceptance from 'admin/tests/helpers/module-for-acceptance';
-import DummySuccessProvider from 'admin/tests/helpers/torii-dummy-success-provider';
+import DummySuccessProvider from 'admin/torii-adapters/torii-dummy-success-provider';
 import signIn from 'admin/tests/pages/sign-in';
 
 moduleForAcceptance('Acceptance | user signs in');
