@@ -1,0 +1,12 @@
+<div class="col-md-4 col-xs-4">
+  <div class="panel panel-default" data-test-episode-edit>
+    <div class="panel-body">
+      {{episode-edit
+        episode=model
+        save=(route-action 'save')
+        rollback=(route-action 'rollback')
+      }}
+    </div>
+  </div>
+</div>
+{{outlet}}

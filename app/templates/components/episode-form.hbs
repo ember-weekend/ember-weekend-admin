@@ -1,0 +1,17 @@
+{{#em-form model=changeset
+  action=save
+  on='submit'
+  submitButton=false
+  data-test-episode-form=true}}
+  {{em-input label='Title' property='title' data-test-episode-title=true}}
+  {{em-input label='Description' property='description' data-test-episode-description=true}}
+
+  <div class="form-actions">
+    <button type="submit"
+      class="btn btn-primary"
+      disabled={{changeset.isInvalid}}
+      data-test-save-btn>
+      Save
+    </button>
+  </div>
+{{/em-form}}
