@@ -4,11 +4,11 @@ import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   number: attr('number'),
-  title: attr(),
-  description: attr(),
-  slug: attr(),
+  title: attr('string'),
+  description: attr('string'),
+  slug: attr('string'),
   releaseDate: attr('date'),
-  filename: attr(),
-  duration: attr(),
+  filename: attr('string'),
+  duration: attr('string'),
   showNotes: hasMany(),
 });

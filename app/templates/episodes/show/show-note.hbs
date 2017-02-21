@@ -42,4 +42,37 @@
       </dl>
     </div>
   </div>
+
+  <div class="panel panel-default clearfix" data-test-resource-authors>
+    <div class="panel-heading clearfix">
+      <h3 class="panel-title">
+        Authors
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#each model.resource.authors as |author|}}
+        <div class="panel panel-default" data-test-resource-author>
+          <div class="panel-body">
+            <dl>
+              <dt>
+                <label>Name</label>
+              </dt>
+              <dd data-test-person-name>
+                {{author.name}}
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                <label>Handle</label>
+              </dt>
+              <dd data-test-person-handle>
+                {{author.handle}}
+              </dd>
+            </dl>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
 </div>
