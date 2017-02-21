@@ -8,6 +8,7 @@ export default function() {
   auth.get('/episodes');
   auth.get('/episodes/:id');
   auth.patch('/episodes/:id');
+  auth.get('/show-notes/:id');
 
   this.post('/sessions', function() {
     return {

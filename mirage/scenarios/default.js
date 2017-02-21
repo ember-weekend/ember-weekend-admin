@@ -7,5 +7,12 @@ export default function(server) {
       title: faker.lorem.words(3),
       description: faker.lorem.sentences(3),
     });
+    for (let j = 0; j < 5; j++) {
+      let resource = server.create('resource');
+      server.create('showNote', {
+        episodeId: i + 1,
+        resourceId: resource.id,
+      });
+    }
   }
 }
