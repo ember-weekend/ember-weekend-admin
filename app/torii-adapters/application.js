@@ -84,5 +84,13 @@ export default Ember.Object.extend({
       // This will get merged onto the session's currentUser property
       return { currentUser };
     });
+  },
+
+  close() {
+    let store = this.get('store');
+    localStorage.removeItem(userKey);
+    localStorage.removeItem(sessionKey);
+    store.unloadAll('user');
+    return Ember.RSVP.resolve();
   }
 });
