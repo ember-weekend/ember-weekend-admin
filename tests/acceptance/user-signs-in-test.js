@@ -43,20 +43,20 @@ test('user signs in with github', function(assert) {
     .signInWithGithub();
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/episodes');
   });
 });
 
 const sessionKey = 'ember-weekend-session';
 const userKey = 'ember-weekend-user';
 
-test('already signed in user is redirected to home page', function(assert) {
+test('already signed in user is redirected to episodes page', function(assert) {
   localStorage.setItem(sessionKey, JSON.stringify({
     data: {
       type: 'sessions',
       id: 1,
       attributes: {
-        token: '12345'
+        token: 'VALID'
       },
       relationships: {
         user: {
@@ -82,6 +82,6 @@ test('already signed in user is redirected to home page', function(assert) {
   signIn.visit();
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/episodes');
   });
 });

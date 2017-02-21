@@ -8,7 +8,6 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('sign-in');
-  this.authenticatedRoute('home', { path: '/' });
   this.authenticatedRoute('episodes', function() {
     this.route('show', { path: ':episodeId' }, function() {
       this.route('show-note', { path: 'show-note/:showNoteId' });

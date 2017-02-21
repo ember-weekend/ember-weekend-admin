@@ -5,7 +5,7 @@ const { set } = Ember;
 export default Ember.Route.extend({
   beforeModel() {
     if (this.get('session.isAuthenticated')) {
-      this.transitionTo('home');
+      this.transitionTo('episodes');
     }
   },
   signInWith(provider) {
@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         session.attemptedTransition.retry();
         session.attemptedTransition = null;
       } else {
-        this.transitionTo('home');
+        this.transitionTo('episodes');
       }
     });
   },
