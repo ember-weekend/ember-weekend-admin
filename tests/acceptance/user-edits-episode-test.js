@@ -30,7 +30,7 @@ test('visiting episode edit', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/episodes/1');
-    assert.equal(episodeShow.episode.title, '1 - better title');
+    assert.equal(episodeShow.episode.title, 'better title');
     assert.equal(episodeShow.episode.description, longerDesc);
   });
 });

@@ -9,6 +9,7 @@ export default create({
   visit: visitable('/episodes/:episodeId'),
   episode: {
     scope: '[data-test-episode]',
+    number: text('[data-test-episode-number]'),
     title: text('[data-test-episode-title]'),
     description: text('[data-test-episode-description]'),
   },

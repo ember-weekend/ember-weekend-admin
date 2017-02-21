@@ -17,7 +17,8 @@ test('visiting episode show', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/episodes/1');
-    assert.equal(page.episode.title, '1 - first');
+    assert.equal(page.episode.number, '1');
+    assert.equal(page.episode.title, 'first');
     assert.equal(page.episode.description, 'desc1');
   });
 });
