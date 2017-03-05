@@ -22,13 +22,13 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    apiUrl: 'http://localhost:4000/api',
+    apiUrl: 'http://localhost:4200/api',
 
     torii: {
       sessionServiceName: 'session',
       providers: {
         'github-oauth2': {
-          apiKey: '6db1eeaf037380c41c00'
+          apiKey: 'a20c48aa3e1f4f17ecbb'
         }
       }
     }
