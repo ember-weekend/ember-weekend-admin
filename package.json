@@ -40,6 +40,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-moment": "7.3.0",
+    "ember-power-select": "1.5.0-beta.3",
     "ember-rapid-forms": "1.0.0-beta11",
     "ember-reactive-helpers": "0.4.0",
     "ember-resolver": "^2.0.3",
