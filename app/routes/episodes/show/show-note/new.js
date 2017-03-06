@@ -20,6 +20,13 @@ export default Ember.Route.extend({
     controller.setProperties(model);
   },
   actions: {
+    removeAuthor(resource, author) {
+      let episode = this.modelFor('episodes.show');
+      resource.get('authors').removeObject(author);
+      return resource.save().then(() => {
+        return this.transitionTo('episodes.show.show-note.new', episode);
+      });
+    },
     addAuthor(resource, author) {
       let episode = this.modelFor('episodes.show');
       resource.get('authors').addObject(author);

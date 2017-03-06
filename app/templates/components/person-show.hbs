@@ -1,5 +1,11 @@
 <div class="panel panel-default" data-test-person-show>
   <div class="panel-body">
+    {{#if remove}}
+      <span
+        class="pull-right glyphicon glyphicon-remove"
+        {{action remove person}}>
+      </span>
+    {{/if}}
     <dl>
       <dt>
         <label>Name</label>
