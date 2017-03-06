@@ -11,7 +11,9 @@ Router.map(function() {
   this.authenticatedRoute('episodes', function() {
     this.route('show', { path: ':episodeId' }, function() {
       this.route('show-note', { path: 'show-note/:showNoteId' });
-      this.route('show-note.new', { path: 'show-note/new' });
+      this.route('show-note.new', { path: 'show-note/new' }, function() {
+        this.route('new-resource');
+      });
     });
     this.route('edit', { path: ':episodeId/edit' });
   });

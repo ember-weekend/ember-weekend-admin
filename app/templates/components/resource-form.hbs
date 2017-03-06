@@ -1,0 +1,36 @@
+{{#em-form model=changeset
+  action=save
+  on='submit'
+  submitButton=false
+  data-test-resource-form=true as |f|}}
+
+  {{f.input
+    status=(if changeset.error.url 'error')
+    label='URL'
+    errors=changeset.error.url
+    property='url'
+    data-test-resource-url=true}}
+
+  {{f.input
+    status=(if changeset.error.title 'error')
+    label='Title'
+    errors=changeset.error.title
+    property='title'
+    data-test-resource-title=true}}
+
+  <div class="form-actions">
+    <button type="submit"
+      class="btn btn-primary"
+      disabled={{changeset.isInvalid}}
+      data-test-save-btn>
+      Save
+    </button>
+
+    <button type="submit"
+      class="btn btn-default"
+      {{action cancel}}
+      data-test-cancel-btn>
+      Cancel
+    </button>
+  </div>
+{{/em-form}}

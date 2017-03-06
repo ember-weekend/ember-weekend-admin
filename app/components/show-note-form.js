@@ -3,7 +3,7 @@ import ShowNoteValidations from 'admin/validations/show-note';
 import Changeset from 'ember-changeset';
 import lookupValidator from 'ember-changeset-validations';
 
-const { get } = Ember;
+const { get, set } = Ember;
 
 export default Ember.Component.extend({
   init() {
@@ -15,8 +15,16 @@ export default Ember.Component.extend({
     this.changeset.validate();
   },
   actions: {
+    newResource() {
+      set(this, 'changeset.resource', null);
+      set(this, 'showNote.resource', null);
+      if (this.newResource) {
+        this.newResource(this.get('showNote'));
+      }
+    },
     selectResource(resource) {
       this.set('changeset.resource', resource);
+      this.set('showNote.resource', resource);
       if (this.selectResource) {
         this.selectResource(resource);
       }

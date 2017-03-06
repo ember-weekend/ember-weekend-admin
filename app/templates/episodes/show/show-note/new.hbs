@@ -9,7 +9,8 @@
       {{show-note-form
         showNote=model
         resources=resources
-        selectResource=(action (mut model.resource))
+        selectResource=(transition-to 'episodes.show.show-note.new' model.episode)
+        newResource=(route-action 'newResource' model)
         save=(route-action 'save')
         cancel=(transition-to 'episodes.show' model.episode)
       }}
@@ -23,5 +24,7 @@
     {{person-list title='Authors' people=model.resource.authors}}
 
   {{/if}}
+
+  {{outlet}}
 
 </div>

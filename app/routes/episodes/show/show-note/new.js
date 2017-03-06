@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
-const { RSVP } = Ember;
+const {
+  RSVP,
+  get,
+} = Ember;
 
 export default Ember.Route.extend({
   model() {
@@ -15,6 +18,10 @@ export default Ember.Route.extend({
     controller.setProperties(model);
   },
   actions: {
+    newResource(model) {
+      return this.transitionTo('episodes.show.show-note.new.new-resource',
+        get(model, 'episode'));
+    },
     save(changeset) {
       changeset.execute();
       let attrs = changeset.get('_content');
