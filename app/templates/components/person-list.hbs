@@ -1,0 +1,14 @@
+<div class="panel panel-default clearfix" data-test-person-list>
+  <div class="panel-heading clearfix">
+    <h3 class="panel-title">
+      {{title}}
+    </h3>
+  </div>
+  <div class="panel-body">
+    {{#each people as |person|}}
+
+      {{person-show person=person}}
+
+    {{/each}}
+  </div>
+</div>
