@@ -4,10 +4,19 @@
       {{show-note-form
         showNote=model
         resources=resources
+        selectResource=(action (mut model.resource))
         save=(route-action 'save')
         cancel=(transition-to 'episodes.show' model.episode)
       }}
     </div>
   </div>
+
+  {{#if model.resource}}
+
+    {{resource-show resource=model.resource}}
+
+    {{person-list title='Authors' people=model.resource.authors}}
+
+  {{/if}}
+
 </div>
-{{outlet}}

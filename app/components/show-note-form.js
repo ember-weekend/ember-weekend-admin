@@ -13,5 +13,13 @@ export default Ember.Component.extend({
       lookupValidator(ShowNoteValidations),
       ShowNoteValidations);
     this.changeset.validate();
+  },
+  actions: {
+    selectResource(resource) {
+      this.set('changeset.resource', resource);
+      if (this.selectResource) {
+        this.selectResource(resource);
+      }
+    }
   }
 });

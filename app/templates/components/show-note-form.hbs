@@ -21,7 +21,7 @@
       options=resources
       searchField='title'
       selected=changeset.resource
-      onchange=(action (mut changeset.resource))
+      onchange=(action 'selectResource')
       as |resource|
     }}
       {{resource.title}}
