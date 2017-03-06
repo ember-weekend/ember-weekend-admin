@@ -10,5 +10,41 @@
       {{person-show person=person}}
 
     {{/each}}
+
+    <div class="form-actions clearfix">
+
+      {{#if isAdding}}
+
+        {{#power-select
+          placeholder='Choose Person'
+          options=allPeople
+          selected=selected
+          searchField='name'
+          onchange=(action add)
+          as |person|
+        }}
+          {{person.name}}
+        {{/power-select}}
+
+        <button type="submit"
+          class="btn btn-default pull-right"
+          {{action 'hideAdd'}}
+          data-test-done-add-btn>
+          Done
+        </button>
+
+      {{else}}
+
+        <button type="submit"
+          class="btn btn-default pull-right"
+          {{action 'showAdd'}}
+          data-test-add-btn>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+
+      {{/if}}
+
+    </div>
+
   </div>
 </div>

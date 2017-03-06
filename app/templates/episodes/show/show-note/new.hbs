@@ -21,7 +21,11 @@
 
     {{resource-show resource=model.resource}}
 
-    {{person-list title='Authors' people=model.resource.authors}}
+    {{person-list
+      title='Authors'
+      allPeople=people
+      add=(route-action 'addAuthor' model.resource)
+      people=model.resource.authors}}
 
   {{/if}}
 
