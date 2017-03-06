@@ -1,0 +1,46 @@
+{{#em-form model=changeset
+  action=save
+  on='submit'
+  submitButton=false
+  data-test-show-note-form=true as |f|}}
+
+  {{f.input
+    status=(if changeset.error.timeStamp 'error')
+    label='Time Stamp'
+    errors=changeset.error.timeStamp
+    property='timeStamp'
+    data-test-show-note-time-stamp=true}}
+
+  {{#f.formGroup
+    status=(if changeset.error.resource 'error')
+    errors=changeset.error.resource
+    shouldShowErrors=true
+    label='Resource'}}
+
+    {{#power-select
+      options=resources
+      searchField='title'
+      selected=changeset.resource
+      onchange=(action (mut changeset.resource))
+      as |resource|
+    }}
+      {{resource.title}}
+    {{/power-select}}
+
+  {{/f.formGroup}}
+
+  <div class="form-actions">
+    <button type="submit"
+      class="btn btn-primary"
+      disabled={{changeset.isInvalid}}
+      data-test-save-btn>
+      Save
+    </button>
+    <button type="submit"
+      class="btn btn-default"
+      {{action cancel}}
+      data-test-cancel-btn>
+      Cancel
+    </button>
+  </div>
+{{/em-form}}

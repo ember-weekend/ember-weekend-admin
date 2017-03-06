@@ -1,10 +1,11 @@
-{{#em-form model=changeset
+{{#em-form model=(changeset episode EpisodeValidations)
   action=save
   on='submit'
   submitButton=false
-  data-test-episode-form=true}}
-  {{em-input label='Title' property='title' data-test-episode-title=true}}
-  {{em-input label='Description' property='description' data-test-episode-description=true}}
+  data-test-episode-form=true as |f|}}
+
+  {{f.input label='Title' property='title' data-test-episode-title=true}}
+  {{f.input label='Description' property='description' data-test-episode-description=true}}
 
   <div class="form-actions">
     <button type="submit"
@@ -14,4 +15,5 @@
       Save
     </button>
   </div>
+
 {{/em-form}}

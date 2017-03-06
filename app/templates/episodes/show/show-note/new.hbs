@@ -1,0 +1,13 @@
+<div class="col-md-4 col-xs-4">
+  <div class="panel panel-default" data-test-show-note-new>
+    <div class="panel-body">
+      {{show-note-form
+        showNote=model
+        resources=resources
+        save=(route-action 'save')
+        cancel=(transition-to 'episodes.show' model.episode)
+      }}
+    </div>
+  </div>
+</div>
+{{outlet}}
