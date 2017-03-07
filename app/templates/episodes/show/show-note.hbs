@@ -4,6 +4,10 @@
 
   {{resource-show resource=model.resource}}
 
-  {{person-list title='Authors' people=model.resource.authors}}
+  {{person-list
+    title='Authors'
+    add=(route-action 'addAuthor' model.resource)
+    remove=(route-action 'removeAuthor' model.resource)
+    people=model.resource.authors}}
 
 </div>
