@@ -1737,6 +1737,13 @@ ember-cli@2.11.1:
     walk-sync "^0.3.0"
     yam "0.0.22"
 
+ember-composable-helpers@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ember-composable-helpers/-/ember-composable-helpers-2.0.0.tgz#8ca13c36c33b15f7d2ded05e9e1c9587814cee5a"
+  dependencies:
+    broccoli-funnel "^1.0.1"
+    ember-cli-babel "^5.1.7"
+
 ember-concurrency@^0.7.15:
   version "0.7.19"
   resolved "https://registry.yarnpkg.com/ember-concurrency/-/ember-concurrency-0.7.19.tgz#095f2ede1b56ab068958cac5b55e77b9de67e1c6"
