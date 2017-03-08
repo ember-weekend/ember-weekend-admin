@@ -1400,7 +1400,13 @@ ember-changeset-validations@1.2.4:
     ember-changeset "^1.2.0"
     ember-cli-babel "^5.1.6"
 
-ember-changeset@1.2.0, ember-changeset@^1.2.0:
+ember-changeset@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.2.2.tgz#fafc1213a561fb30d84998be1f393f3b30ef5c5f"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+
+ember-changeset@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.2.0.tgz#db06a8f3321f280dc6f156fa837a947bdd3c562a"
   dependencies:
