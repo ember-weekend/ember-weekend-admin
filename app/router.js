@@ -20,6 +20,10 @@ Router.map(function() {
     });
     this.route('edit', { path: ':episodeId/edit' });
   });
+  this.authenticatedRoute('people', function() {
+    this.route('show', { path: ':personId' })
+    this.route('edit', { path: ':personId/edit' });
+  });
 });
 
 export default Router;
