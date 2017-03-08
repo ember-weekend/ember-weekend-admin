@@ -4,6 +4,11 @@ const { get } = Ember;
 
 export default Ember.Route.extend({
   actions: {
+    logout() {
+      let session = this.get('session');
+      session.close();
+      this.transitionTo('sign-in');
+    },
     accessDenied() {
       this.transitionTo('sign-in');
     },

@@ -1,3 +1,29 @@
+{{#bs-navbar type=(if inverse 'inverse') fluid=fluid as |navbar|}}
+  <div class="navbar-header">
+    {{navbar.toggle}}
+    {{#link-to 'index' class='navbar-brand'}}Ember Weekend{{/link-to}}
+  </div>
+  {{#navbar.content}}
+
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}{{#nav.link-to 'episodes'}}Episodes{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to 'people'}}People{{/nav.link-to}}{{/nav.item}}
+    {{/navbar.nav}}
+
+    {{#navbar.nav class='pull-right' as |nav|}}
+      {{#bs-dropdown class='pull-right' tagName='li' as |dd|}}
+        {{#dd.toggle}}Profile <span class='caret'></span>{{/dd.toggle}}
+        {{#dd.menu as |menu|}}
+          {{#menu.item}}
+            <a {{action 'logout'}}>Logout</a>
+          {{/menu.item}}
+        {{/dd.menu}}
+      {{/bs-dropdown}}
+    {{/navbar.nav}}
+
+  {{/navbar.content}}
+{{/bs-navbar}}
+
 <div class="container">
   <div class="row">
     {{outlet}}
