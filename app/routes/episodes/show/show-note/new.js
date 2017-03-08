@@ -1,26 +1,30 @@
 import Ember from 'ember';
-
-const {
-  RSVP,
-  get,
-} = Ember;
+import ShowNoteValidations from 'admin/validations/show-note';
+import Changeset from 'ember-changeset';
+import lookupValidator from 'ember-changeset-validations';
 
 export default Ember.Route.extend({
   model() {
     let episode = this.modelFor('episodes.show');
-    let resources = this.store.findAll('resource');
-    return RSVP.hash({
-      model: { episode },
-      resources,
-    });
-  },
-  setupController(controller, model) {
-    controller.setProperties(model);
+    let model = { episode };
+    let changeset = new Changeset(model,
+      lookupValidator(ShowNoteValidations),
+      ShowNoteValidations);
+    changeset.validate();
+    return changeset;
   },
   actions: {
-    newResource(model) {
-      return this.transitionTo('episodes.show.show-note.new.new-resource',
-        get(model, 'episode'));
+    selectResource(episode, changeset, resource) {
+      changeset.set('resource', resource);
+      return this.transitionTo(
+        'episodes.show.show-note.new',
+        episode);
+    },
+    newResource(episode, changeset) {
+      changeset.set('resource', null);
+      return this.transitionTo(
+        'episodes.show.show-note.new.new-resource',
+        episode);
     },
     save(changeset) {
       changeset.execute();

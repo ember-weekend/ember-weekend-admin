@@ -7,14 +7,4 @@ export default Ember.Route.extend({
   serialize(model) {
     return { showNoteId: model.get('id') };
   },
-  actions: {
-    removeAuthor(resource, author) {
-      resource.content.get('authors').removeObject(author);
-      return resource.content.save();
-    },
-    addAuthor(resource, author) {
-      resource.content.get('authors').addObject(author);
-      return resource.content.save();
-    },
-  },
 });

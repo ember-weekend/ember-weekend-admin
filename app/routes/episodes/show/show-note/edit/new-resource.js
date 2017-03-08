@@ -3,9 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     let episode = this.modelFor('episodes.show');
+    let showNote = this.modelFor('episodes.show.show-note.edit');
     return {
       model: {},
       episode,
+      showNote,
     };
   },
   setupController(controller, model) {
@@ -14,7 +16,9 @@ export default Ember.Route.extend({
   actions: {
     selectResource(episode, changeset, resource) {
       changeset.set('resource', resource);
-      return this.transitionTo('episodes.show.show-note.new', episode);
+      return this.transitionTo(
+        'episodes.show.show-note.edit',
+        episode, changeset);
     },
     save(changeset) {
       changeset.execute();
@@ -23,7 +27,10 @@ export default Ember.Route.extend({
 
       return resource.save().then(() => {
         let episode = this.modelFor('episodes.show');
-        return this.transitionTo('episodes.show.show-note.new', episode);
+        let showNote = this.modelFor('episodes.show.show-note.edit');
+        return this.transitionTo(
+          'episodes.show.show-note.edit',
+          episode, showNote);
       }).catch((e) => {
         resource.destroyRecord();
         throw e;

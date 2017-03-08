@@ -1,26 +1,26 @@
-{{#em-form model=changeset
+{{#em-form model=showNote
   action=save
   on='submit'
   submitButton=false
   data-test-show-note-form=true as |f|}}
 
   {{f.input
-    status=(if changeset.error.timeStamp 'error')
+    status=(if showNote.error.timeStamp 'error')
     label='Time Stamp'
-    errors=changeset.error.timeStamp
+    errors=showNote.error.timeStamp
     property='timeStamp'
     data-test-show-note-time-stamp=true}}
 
   {{#f.formGroup
-    status=(if changeset.error.resource 'error')
-    errors=changeset.error.resource
+    status=(if showNote.error.resource 'error')
+    errors=showNote.error.resource
     shouldShowErrors=true
     label='Resource'}}
 
     {{#power-select
       options=resources
       searchField='title'
-      selected=changeset.resource
+      selected=showNote.resource
       onchange=(action 'selectResource')
       as |resource|
     }}
@@ -32,7 +32,7 @@
   <div class="form-actions">
     <button type="submit"
       class="btn btn-primary"
-      disabled={{changeset.isInvalid}}
+      disabled={{showNote.isInvalid}}
       data-test-save-btn>
       Save
     </button>

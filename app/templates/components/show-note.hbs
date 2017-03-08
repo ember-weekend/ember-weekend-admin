@@ -13,6 +13,15 @@
         {{showNote.timeStamp}}
       </dd>
     </dl>
+
+    <div class="form-actions">
+      <button class="btn btn-default pull-right"
+        {{action (transition-to 'episodes.show.show-note.edit' showNote.episode showNote)}}
+        data-test-edit-show-note-btn>
+        Edit
+      </button>
+    </div>
+
   </div>
 </div>
 
