@@ -1,0 +1,65 @@
+{{#em-form model=person
+  action=save
+  on='submit'
+  submitButton=false
+  data-test-person-form=true as |f|}}
+
+  {{f.input
+    status=(if person.error.name 'error')
+    label='Name'
+    errors=person.error.name
+    property='name'
+    data-test-person-name=true}}
+
+  {{f.input
+    status=(if person.error.handle 'error')
+    label='Handle'
+    errors=person.error.handle
+    property='handle'
+    data-test-person-handle=true}}
+
+  {{f.input
+    status=(if person.error.tagline 'error')
+    label='Tagline'
+    errors=person.error.tagline
+    property='tagline'
+    data-test-person-tagline=true}}
+
+  {{f.text
+    status=(if person.error.bio 'error')
+    label='Bio'
+    errors=person.error.bio
+    property='bio'
+    rows=8
+    data-test-person-bio=true}}
+
+  {{f.input
+    status=(if person.error.url 'error')
+    label='URL'
+    errors=person.error.url
+    property='url'
+    data-test-person-url=true}}
+
+  {{f.input
+    status=(if person.error.avatarUrl 'error')
+    label='Avatar URL'
+    errors=person.error.avatarUrl
+    property='avatarUrl'
+    data-test-person-avatar-url=true}}
+
+  <div class="form-actions">
+    <button type="submit"
+      class="btn btn-primary"
+      disabled={{person.isInvalid}}
+      data-test-save-btn>
+      Save
+    </button>
+    <button type="submit"
+      class="btn btn-default"
+      {{action cancel}}
+      data-test-cancel-btn>
+      Cancel
+    </button>
+  </div>
+
+{{/em-form}}

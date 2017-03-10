@@ -17,6 +17,15 @@
         {{/link-to}}
       {{/each}}
     </div>
+    <div class="panel-body">
+      <div class="form-actions clearfix">
+        <button class="btn btn-default pull-right"
+          {{action (transition-to 'people.new')}}
+          data-test-new-people-btn>
+          New
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 {{outlet}}

@@ -1,0 +1,15 @@
+<div class="col-md-4 col-xs-4">
+  <div class="panel panel-default" data-test-person-new>
+    <div class="panel-heading clearfix">
+      <h3 class="panel-title">
+        Person
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{person-form
+        person=model
+        save=(route-action 'save')
+        cancel=(transition-to 'people')}}
+    </div>
+  </div>
+</div>
