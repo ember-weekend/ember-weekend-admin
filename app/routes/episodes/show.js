@@ -16,5 +16,13 @@ export default Ember.Route.extend({
       resource.get('authors').addObject(author);
       return resource.content.save();
     },
+    removeGuest(episode, guest) {
+      episode.get('guests').removeObject(guest);
+      return episode.save();
+    },
+    addGuest(episode, guest) {
+      episode.get('guests').addObject(guest);
+      return episode.save();
+    },
   },
 });

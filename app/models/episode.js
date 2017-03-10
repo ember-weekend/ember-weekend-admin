@@ -11,4 +11,5 @@ export default Model.extend({
   filename: attr('string'),
   duration: attr('string'),
   showNotes: hasMany(),
+  guests: hasMany('person'),
 });

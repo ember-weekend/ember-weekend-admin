@@ -36,6 +36,12 @@
     </div>
   </div>
 
+  {{person-list
+    title='Guests'
+    add=(route-action 'addGuest' model)
+    remove=(route-action 'removeGuest' model)
+    people=model.guests}}
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
