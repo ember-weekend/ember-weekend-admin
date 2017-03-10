@@ -1,0 +1,33 @@
+<div class="col-md-4 col-xs-4" data-test-resources>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        Resources
+      </h3>
+    </div>
+    <div class="list-group">
+      {{#each model as |resource|}}
+        {{#link-to 'resources.show' resource class='list-group-item resource'}}
+          <h4 class="list-group-item-heading" data-test-resource-name>
+            {{resource.title}}
+          </h4>
+          <p class="list-group-item-text" data-test-resource-handle>
+            {{#each resource.authors as |author|}}
+              {{author.handle}}
+            {{/each}}
+          </p>
+        {{/link-to}}
+      {{/each}}
+    </div>
+    <div class="panel-body">
+      <div class="form-actions clearfix">
+        <button class="btn btn-default pull-right"
+          {{action (transition-to 'resources.new')}}
+          data-test-new-resource-btn>
+          New
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{{outlet}}

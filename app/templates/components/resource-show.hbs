@@ -21,5 +21,12 @@
         {{resource.title}}
       </dd>
     </dl>
+    <div class="form-actions">
+      <button class="btn btn-default pull-right"
+        {{action (transition-to 'resources.edit' resource)}}
+        data-test-edit-resource-btn>
+        Edit
+      </button>
+    </div>
   </div>
 </div>

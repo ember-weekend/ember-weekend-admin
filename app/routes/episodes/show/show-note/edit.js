@@ -15,17 +15,13 @@ function wrapChangeset(model) {
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord(
-      'show-note', params.showNoteId).then((model) => {
-      return wrapChangeset(model);
-    });
+    return this.store.findRecord('show-note', params.showNoteId);
   },
   setupController(controller, model) {
     if (!isChangeset(model)) {
       model = wrapChangeset(model);
     }
-    let changeset = wrapChangeset(model);
-    controller.set('model', changeset);
+    controller.set('model', model);
   },
   serialize(model) {
     return { showNoteId: model.get('id') };

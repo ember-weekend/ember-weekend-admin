@@ -1,27 +1,27 @@
-{{#em-form model=changeset
+{{#em-form model=resource
   action=save
   on='submit'
   submitButton=false
   data-test-resource-form=true as |f|}}
 
   {{f.input
-    status=(if changeset.error.url 'error')
+    status=(if resource.error.url 'error')
     label='URL'
-    errors=changeset.error.url
+    errors=resource.error.url
     property='url'
     data-test-resource-url=true}}
 
   {{f.input
-    status=(if changeset.error.title 'error')
+    status=(if resource.error.title 'error')
     label='Title'
-    errors=changeset.error.title
+    errors=resource.error.title
     property='title'
     data-test-resource-title=true}}
 
   <div class="form-actions">
     <button type="submit"
       class="btn btn-primary"
-      disabled={{changeset.isInvalid}}
+      disabled={{resource.isInvalid}}
       data-test-save-btn>
       Save
     </button>

@@ -46,7 +46,7 @@
 
     <button type="submit"
       class="btn btn-default"
-      {{action 'newResource'}}
+      {{action (transition-to 'resources.new')}}
       data-test-new-resource-btn>
       New Resource
     </button>
