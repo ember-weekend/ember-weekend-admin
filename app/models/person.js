@@ -9,5 +9,6 @@ export default Model.extend({
   avatarUrl: attr('string'),
   tagline: attr('string'),
   bio: attr('string'),
-  resources: hasMany('resource'),
+  resources: hasMany('resource', { inverse: 'authors' }),
+  episodes: hasMany('episode', { inverse: 'guests' }),
 });

@@ -7,7 +7,7 @@
     </div>
     <div class="list-group">
       {{#each model as |person|}}
-        {{#link-to 'people.show' person class='list-group-item person'}}
+        {{#link-to 'people.show' person.id class='list-group-item person'}}
           <h4 class="list-group-item-heading" data-test-person-name>
             {{person.name}}
           </h4>
