@@ -6,4 +6,5 @@ export default Model.extend({
   url: attr('string'),
   title: attr('string'),
   authors: hasMany('person'),
+  showNotes: hasMany(),
 });

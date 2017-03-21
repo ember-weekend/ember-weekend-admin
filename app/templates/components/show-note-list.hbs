@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Show Notes
+    </h3>
+  </div>
+  <div class="list-group" data-test-show-notes>
+    {{#each showNotes as |showNote|}}
+      {{#link-to 'episodes.show.show-note' showNote.episode showNote class='list-group-item show-note'}}
+        <h4 class="list-group-item-heading" data-test-show-note-timestamp>
+          {{showNote.timeStamp}}
+        </h4>
+        <p class="list-group-item-text" data-test-show-note-resource-title>
+          {{showNote.resource.title}}
+        </p>
+      {{/link-to}}
+    {{/each}}
+  </div>
+  <div class="panel-body">
+    <div class="form-actions clearfix">
+      <button class="btn btn-default pull-right"
+        {{action (transition-to 'episodes.show.show-note.new' showNote.episode)}}
+        data-test-new-show-note-btn>
+        New
+      </button>
+    </div>
+  </div>
+</div>

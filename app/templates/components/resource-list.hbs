@@ -6,7 +6,7 @@
   </div>
   <div class="list-group">
     {{#each resources as |resource|}}
-      {{#link-to 'resources.show' resource class='list-group-item resource'}}
+      {{#link-to 'resources.show' resource.id class='list-group-item resource'}}
         <h4 class="list-group-item-heading" data-test-resource-name>
           {{resource.title}}
         </h4>
