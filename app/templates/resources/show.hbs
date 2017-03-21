@@ -1,7 +1,7 @@
 <div class="col-md-4 col-xs-4">
   {{resource-show resource=model}}
 
-  {{person-list
+  {{people-select
     title='Authors'
     add=(route-action 'addAuthor' model)
     remove=(route-action 'removeAuthor' model)
