@@ -1,31 +1,4 @@
 <div class="col-md-4 col-xs-4" data-test-people>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        People
-      </h3>
-    </div>
-    <div class="list-group">
-      {{#each model as |person|}}
-        {{#link-to 'people.show' person.id class='list-group-item person'}}
-          <h4 class="list-group-item-heading" data-test-person-name>
-            {{person.name}}
-          </h4>
-          <p class="list-group-item-text" data-test-person-handle>
-            {{person.handle}}
-          </p>
-        {{/link-to}}
-      {{/each}}
-    </div>
-    <div class="panel-body">
-      <div class="form-actions clearfix">
-        <button class="btn btn-default pull-right"
-          {{action (transition-to 'people.new')}}
-          data-test-new-people-btn>
-          New
-        </button>
-      </div>
-    </div>
-  </div>
+  {{person-list people=model}}
 </div>
 {{outlet}}
