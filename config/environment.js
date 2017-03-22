@@ -55,6 +55,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.apiUrl = process.env.API_URL;
+    ENV.torii.providers['github-oauth2'].apiKey = process.env.GITHUB_CLIENT_ID;
   }
 
   return ENV;
