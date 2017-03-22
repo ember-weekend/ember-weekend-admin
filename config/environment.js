@@ -54,7 +54,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.apiUrl = process.env.API_URL;
   }
 
   return ENV;
