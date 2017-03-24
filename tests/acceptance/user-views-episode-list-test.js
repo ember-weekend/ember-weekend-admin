@@ -20,11 +20,11 @@ test('visiting /episodes', function(assert) {
   andThen(function() {
     assert.equal(currentURL(), page.url);
     assert.equal(page.episodes().count, 3);
-    assert.equal(page.episodes(0).title, '1 - first');
-    assert.equal(page.episodes(0).description, 'desc1');
+    assert.equal(page.episodes(0).title, '3 - third');
+    assert.equal(page.episodes(0).description, 'desc3');
     assert.equal(page.episodes(1).title, '2 - second');
     assert.equal(page.episodes(1).description, 'desc2');
-    assert.equal(page.episodes(2).title, '3 - third');
-    assert.equal(page.episodes(2).description, 'desc3');
+    assert.equal(page.episodes(2).title, '1 - first');
+    assert.equal(page.episodes(2).description, 'desc1');
   });
 });

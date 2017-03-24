@@ -5,7 +5,7 @@
     </h3>
   </div>
   <div class="list-group">
-    {{#each episodes as |episode|}}
+    {{#each sorted as |episode|}}
       {{#link-to 'episodes.show' episode.id class='list-group-item episode'}}
         <h4 class="list-group-item-heading" data-test-episode-title>
           {{episode.number}} - {{episode.title}}
