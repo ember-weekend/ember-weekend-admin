@@ -10,7 +10,7 @@ export default Model.extend({
   slug: attr('string'),
   releaseDate: attr('string'),
   filename: attr('string'),
-  length: attr('number'),
+  byteLength: attr('number'),
   duration: attr('string'),
   showNotes: hasMany(),
   guests: hasMany('person'),

@@ -1,17 +1,68 @@
-{{#em-form model=(changeset episode EpisodeValidations)
+{{#em-form model=episode
   action=save
   on='submit'
   submitButton=false
   data-test-episode-form=true as |f|}}
 
-  {{f.checkbox label='Published' property='published' data-test-episode-published=true}}
-  {{f.input label='Number' property='number' data-test-episode-number=true}}
-  {{f.input label='Title' property='title' data-test-episode-title=true}}
-  {{f.input label='Slug' property='slug' data-test-episode-slug=true}}
-  {{f.input label='Length' property='length' data-test-episode-length=true}}
-  {{f.input label='Duration' property='duration' data-test-episode-duration=true}}
-  {{f.input label='Release Date' property='releaseDate' data-test-episode-release-date=true}}
+  {{f.checkbox
+    status=(if episode.error.published 'error')
+    errors=episode.error.published
+    label='Published'
+    property='published'
+    data-test-episode-published=true}}
+
+  {{f.input
+    status=(if episode.error.number 'error')
+    errors=episode.error.number
+    label='Number'
+    property='number'
+    data-test-episode-number=true}}
+
+  {{f.input
+    status=(if episode.error.title 'error')
+    errors=episode.error.title
+    label='Title'
+    property='title'
+    data-test-episode-title=true}}
+
+  {{f.input
+    status=(if episode.error.slug 'error')
+    errors=episode.error.slug
+    label='Slug'
+    property='slug'
+    data-test-episode-slug=true}}
+
+  {{f.input
+    status=(if episode.error.byteLength 'error')
+    errors=episode.error.byteLength
+    label='Byte Length'
+    property='byteLength'
+    data-test-episode-byte-length=true}}
+
+  {{f.input
+    status=(if episode.error.duration 'error')
+    errors=episode.error.duration
+    label='Duration'
+    property='duration'
+    data-test-episode-duration=true}}
+
+  {{f.input
+    status=(if episode.error.releaseDate 'error')
+    errors=episode.error.releaseDate
+    label='Release Date'
+    property='releaseDate'
+    data-test-episode-release-date=true}}
+
+  {{f.input
+    status=(if episode.error.filename 'error')
+    errors=episode.error.filename
+    label='Filename'
+    property='filename'
+    data-test-episode-filename=true}}
+
   {{f.text
+    status=(if episode.error.description 'error')
+    errors=episode.error.description
     label='Description'
     property='description'
     rows=8
@@ -20,9 +71,16 @@
   <div class="form-actions">
     <button type="submit"
       class="btn btn-primary"
-      disabled={{changeset.isInvalid}}
+      disabled={{episode.isInvalid}}
       data-test-save-btn>
       Save
+    </button>
+
+    <button type="submit"
+      class="btn btn-default"
+      {{action cancel}}
+      data-test-cancel-btn>
+      Cancel
     </button>
   </div>
 

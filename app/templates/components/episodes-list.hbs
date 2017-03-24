@@ -4,6 +4,15 @@
       Episodes
     </h3>
   </div>
+  <div class="panel-body">
+    <div class="form-actions clearfix">
+      <button class="btn btn-default pull-right"
+        {{action (transition-to 'episodes.new')}}
+        data-test-new-episode-btn>
+        New
+      </button>
+    </div>
+  </div>
   <div class="list-group">
     {{#each sorted as |episode|}}
       {{#link-to 'episodes.show' episode.id class='list-group-item episode'}}

@@ -22,9 +22,6 @@ export default Ember.Route.extend({
     }
     controller.set('model', model);
   },
-  serialize(model) {
-    return { resourceId: model.get('id') };
-  },
   actions: {
     save(changeset) {
       changeset.execute();

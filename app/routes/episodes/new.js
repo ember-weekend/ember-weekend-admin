@@ -13,8 +13,8 @@ function wrapChangeset(model) {
 }
 
 export default Ember.Route.extend({
-  model(params) {
-    return this.store.find('episode', params.episodeId);
+  model() {
+    return {};
   },
   setupController(controller, model) {
     if (!isChangeset(model)) {
@@ -22,13 +22,17 @@ export default Ember.Route.extend({
     }
     controller.set('model', model);
   },
-  serialize(model) {
-    return { episodeId: model.get('id') };
-  },
   actions: {
     save(changeset) {
-      return changeset.save().then((episode) => {
+      changeset.execute();
+      let attrs = changeset.get('_content');
+      let episode = this.store.createRecord('episode', attrs);
+
+      return episode.save().then((episode) => {
         return this.transitionTo('episodes.show', episode);
+      }).catch((e) => {
+        episode.destroyRecord();
+        throw e;
       });
     }
   }

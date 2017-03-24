@@ -1,15 +1,15 @@
 <div class="col-md-4 col-xs-4">
-  <div class="panel panel-default" data-test-resource-new>
+  <div class="panel panel-default" data-test-episode-new>
     <div class="panel-heading clearfix">
       <h3 class="panel-title">
-        Resource
+        Episode
       </h3>
     </div>
     <div class="panel-body">
-      {{resource-form
-        resource=model
+      {{episode-form
+        episode=model
         save=(route-action 'save')
-        cancel=(transition-to 'resources')
+        cancel=(transition-to 'episodes')
       }}
     </div>
   </div>

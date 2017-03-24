@@ -1,10 +1,15 @@
 <div class="col-md-4 col-xs-4">
   <div class="panel panel-default" data-test-episode-edit>
+    <div class="panel-heading clearfix">
+      <h3 class="panel-title">
+        Episode
+      </h3>
+    </div>
     <div class="panel-body">
       {{episode-form
         episode=model
         save=(route-action 'save')
-        rollback=(route-action 'rollback')
+        cancel=(transition-to 'episodes.show' model)
       }}
     </div>
   </div>

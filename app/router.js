@@ -17,6 +17,7 @@ Router.map(function() {
       });
     });
     this.route('edit', { path: ':episodeId/edit' });
+    this.route('new');
   });
   this.authenticatedRoute('people', function() {
     this.route('new');
