@@ -16,7 +16,7 @@ export default create({
       fill: fillable(),
     },
     description: {
-      scope: '[data-test-episode-description] input',
+      scope: '[data-test-episode-description] textarea',
       value: value(),
       fill: fillable(),
     },

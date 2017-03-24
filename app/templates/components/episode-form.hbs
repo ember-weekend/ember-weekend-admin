@@ -4,9 +4,18 @@
   submitButton=false
   data-test-episode-form=true as |f|}}
 
+  {{f.checkbox label='Published' property='published' data-test-episode-published=true}}
+  {{f.input label='Number' property='number' data-test-episode-number=true}}
   {{f.input label='Title' property='title' data-test-episode-title=true}}
   {{f.input label='Slug' property='slug' data-test-episode-slug=true}}
-  {{f.input label='Description' property='description' data-test-episode-description=true}}
+  {{f.input label='Length' property='length' data-test-episode-length=true}}
+  {{f.input label='Duration' property='duration' data-test-episode-duration=true}}
+  {{f.input label='Release Date' property='releaseDate' data-test-episode-release-date=true}}
+  {{f.text
+    label='Description'
+    property='description'
+    rows=8
+    data-test-episode-description=true}}
 
   <div class="form-actions">
     <button type="submit"

@@ -8,6 +8,12 @@
     <div class="panel-body">
       <dl>
         <dt>
+          <label>Published</label>
+        </dt>
+        <dd data-test-episode-published>
+          {{model.published}}
+        </dd>
+        <dt>
           <label>Number</label>
         </dt>
         <dd data-test-episode-number>
@@ -24,6 +30,24 @@
         </dt>
         <dd data-test-episode-slug>
           {{model.slug}}
+        </dd>
+        <dt>
+          <label>Length</label>
+        </dt>
+        <dd data-test-episode-length>
+          {{model.length}}
+        </dd>
+        <dt>
+          <label>Duration</label>
+        </dt>
+        <dd data-test-episode-duration>
+          {{model.duration}}
+        </dd>
+        <dt>
+          <label>Release Date</label>
+        </dt>
+        <dd data-test-episode-release-date>
+          {{model.releaseDate}}
         </dd>
         <dt>
           <label>Description</label>
