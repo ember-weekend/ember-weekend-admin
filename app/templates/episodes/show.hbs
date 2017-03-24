@@ -68,6 +68,20 @@
           data-test-edit-episode-btn>
           Edit
         </button>
+
+        {{#bs-modal open=showDeleteModal onHidden=(action (mut showDeleteModal) false) as |modal|}}
+            {{#modal.header}}
+                <h4 class="modal-title">Delete Episode</h4>
+            {{/modal.header}}
+            {{#modal.body}}
+              Are you sure you want to delete "Episode {{model.number}} - {{model.title}}"?
+            {{/modal.body}}
+            {{#modal.footer}}
+                {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+                {{#bs-button type="danger" onClick=(pipe-action (route-action 'deleteEpisode' model) modal.close (transition-to 'episodes'))}}Delete{{/bs-button}}
+            {{/modal.footer}}
+        {{/bs-modal}}
+        {{#bs-button type='danger' onClick=(action (mut showDeleteModal) true) data-test-delete-episode-btn=true}}Delete{{/bs-button}}
       </div>
     </div>
   </div>

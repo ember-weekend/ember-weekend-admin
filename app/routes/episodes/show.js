@@ -8,6 +8,9 @@ export default Ember.Route.extend({
     return { episodeId: model.get('id') };
   },
   actions: {
+    deleteEpisode(episode) {
+      return episode.destroyRecord();
+    },
     removeAuthor(resource, author) {
       resource.get('authors').removeObject(author);
       return resource.content.save();
