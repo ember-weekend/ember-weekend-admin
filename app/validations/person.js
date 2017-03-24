@@ -11,7 +11,7 @@ export default {
   ],
   tagline: [
     validatePresence(true),
-    validateLength({ min: 1, max: 30 }),
+    validateLength({ min: 1, max: 50 }),
   ],
   bio: [
     validatePresence(true),
