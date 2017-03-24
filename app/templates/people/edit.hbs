@@ -9,7 +9,7 @@
       {{person-form
         person=model
         save=(route-action 'save')
-        cancel=(transition-to 'people')}}
+        cancel=(transition-to 'people.show' model)}}
     </div>
   </div>
 </div>
