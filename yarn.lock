@@ -1393,6 +1393,13 @@ ember-bootstrap@1.0.0-alpha.2:
     ember-runtime-enumerable-includes-polyfill "^1.0.1"
     ember-wormhole "^0.4.1"
 
+ember-changeset-hofs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ember-changeset-hofs/-/ember-changeset-hofs-1.0.2.tgz#ae0fbecf40767ff3e24acc63fbb1fbe2b1640847"
+  dependencies:
+    ember-changeset "1.1.2"
+    ember-cli-babel "^5.1.6"
+
 ember-changeset-validations@1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-1.2.4.tgz#2832f4c5daeebd139a8713ed30f8e902b360f286"
@@ -1400,15 +1407,15 @@ ember-changeset-validations@1.2.4:
     ember-changeset "^1.2.0"
     ember-cli-babel "^5.1.6"
 
-ember-changeset@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.2.2.tgz#fafc1213a561fb30d84998be1f393f3b30ef5c5f"
+ember-changeset@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.1.2.tgz#810bb7ce602645c0408b4cfe4285be96d254ae2a"
   dependencies:
     ember-cli-babel "^5.1.6"
 
-ember-changeset@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.2.0.tgz#db06a8f3321f280dc6f156fa837a947bdd3c562a"
+ember-changeset@1.2.2, ember-changeset@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.2.2.tgz#fafc1213a561fb30d84998be1f393f3b30ef5c5f"
   dependencies:
     ember-cli-babel "^5.1.6"
 
