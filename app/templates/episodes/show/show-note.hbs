@@ -2,12 +2,16 @@
 
   {{show-note showNote=model}}
 
-  {{resource-show resource=model.resource}}
+  {{#if model.resource}}
 
-  {{people-select
-    title='Authors'
-    add=(route-action 'addAuthor' model.resource)
-    remove=(route-action 'removeAuthor' model.resource)
-    people=model.resource.authors}}
+    {{resource-show resource=model.resource}}
+
+    {{people-select
+      title='Authors'
+      add=(route-action 'addAuthor' model.resource)
+      remove=(route-action 'removeAuthor' model.resource)
+      people=model.resource.authors}}
+
+  {{/if}}
 
 </div>

@@ -11,6 +11,13 @@
     property='timeStamp'
     data-test-show-note-time-stamp=true}}
 
+  {{f.input
+    status=(if showNote.error.note 'error')
+    label='Note'
+    errors=showNote.error.note
+    property='note'
+    data-test-show-note-note=true}}
+
   {{#f.formGroup
     status=(if showNote.error.resource 'error')
     errors=showNote.error.resource
@@ -18,6 +25,7 @@
     label='Resource'}}
 
     {{#power-select
+      allowClear=true
       options=resources
       searchField='title'
       selected=showNote.resource

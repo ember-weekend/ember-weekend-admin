@@ -8,7 +8,4 @@ export default {
     validatePresence(true),
     validateFormat({ regex: /^\d{2}:\d{2}$/ }),
   ],
-  resource: [
-    validatePresence(true),
-  ],
 };
